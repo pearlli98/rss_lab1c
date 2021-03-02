@@ -13,6 +13,15 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
 )
 
+catkin_package(
+	  CATKIN_DEPENDS rospy std_msgs sensor_msgs
+	  )
+
+set({CATKIN_PACKAGE_BIN_DESTINATION} "~/racecar_ws/src/catkin_ws")
+catkin_install_python(PROGRAMS simple_publisher.py
+	DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+	)
+
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
